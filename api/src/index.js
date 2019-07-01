@@ -1,11 +1,15 @@
 const express = require("express");
 const helmet = require("helmet");
-const moment = require("moment");
+const Knex = require("knex");
+const { Model } = require("objection");
+const connection = require("../knexfile");
 const { User } = require("../models/user");
 
 const app = express();
-
 app.use(helmet());
+
+const knexConnection = Knex(connection);
+Model.knex(knexConnection);
 
 app.get("*", async (req, res) => {
   const users = await User.query();
