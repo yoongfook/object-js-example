@@ -1,15 +1,17 @@
-const express = require('express');
-const helmet = require('helmet');
-const moment = require('moment');
+const express = require("express");
+const helmet = require("helmet");
+const moment = require("moment");
+const { User } = require("../models/user");
 
 const app = express();
 
 app.use(helmet());
 
-app.get('*', (req, res) => {
-  res.set('Content-Type', 'text/html');
-  const currentTime = moment().format('MMMM Do YYYY, h:mm:ss a');
-  res.status(200).send(currentTime);
+app.get("*", async (req, res) => {
+  const users = await User.query();
+
+  res.set("Content-Type", "application/json");
+  res.status(200).send(users);
 });
 
 module.exports = app;
