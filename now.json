@@ -1,6 +1,7 @@
 {
   "version": 2,
-  "name": "my-express-project",
+  "name": "objection-js",
+  "regions": ["iad1"],
   "builds": [{ "src": "api/src/*.js", "use": "@now/node" }],
   "routes": [
     {
