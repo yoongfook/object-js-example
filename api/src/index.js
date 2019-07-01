@@ -3,7 +3,7 @@ const helmet = require("helmet");
 const Knex = require("knex");
 const { Model } = require("objection");
 const connection = require("../knexfile")[process.env.NODE_ENV];
-const { User } = require("../models/User");
+const { User } = require("../models/user");
 
 const app = express();
 app.use(helmet());
