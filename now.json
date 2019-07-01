@@ -8,9 +8,7 @@
       "dest": "/api/src/index.js"
     }
   ],
-  "build": {
-    "env": {
-      "DATABASE_URL": "@wavingly_database_url"
-    }
+  "env": {
+    "DATABASE_URL": "@wavingly_database_url"
   }
 }
