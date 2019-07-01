@@ -10,7 +10,7 @@
   ],
   "build": {
     "env": {
-      "DATABASE_URL": "postgres://root@localhost:5432/objection-js-dev"
+      "DATABASE_URL": "@wavingly_database_url"
     }
   }
 }
