@@ -1,7 +1,10 @@
-const pg = require("pg");
-// pg.defaults.ssl = true;
-
 module.exports = {
-  client: "pg",
-  connection: "postgres://root@localhost:5432/objection-js-dev"
+  development: {
+    client: "pg",
+    connection: { user: "root", database: "objection-js-dev" }
+  },
+  production: {
+    client: "pg",
+    connection: process.env.DATABASE_URL
+  }
 };
